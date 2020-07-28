@@ -20,6 +20,7 @@ jobs:
           java-version: 11
       - name: Build with Gradle
         run: ./gradlew build
+      - run: sudo apt-get update  
       - run: sudo apt-get install docker-ce docker-ce-cli
       - run: docker login -u "${{env.DOCKER_HUB_USERNAME}}" -p "${{secrets.DOCKER_HUB_PASSWORD}}"
       - run: curl -LO https://github.com/buildpacks/pack/releases/download/v0.10.0/pack-v0.10.0-linux.tgz
