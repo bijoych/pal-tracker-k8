@@ -18,7 +18,10 @@ spec:
     spec:
       containers:
         - name: pal-tracker-container
-          image: bijoych/pal-tracker:v2
+          image: bijoych/pal-tracker:v3
+          resources:
+            limits:
+              cpu: "100m"
           readinessProbe:
             httpGet:
               path: /actuator/health/readiness
